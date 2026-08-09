@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast — Modern Weather</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background" id="background"></div>
+
+    <main class="app">
+        <header class="topbar">
+            <h1 class="logo"><span class="logo-icon">◍</span> SkyCast</h1>
+            <form id="search-form" class="search">
+                <input type="text" id="search-input" placeholder="Search city..." autocomplete="off" />
+                <button type="submit" aria-label="Search">⌕</button>
+            </form>
+            <button id="locate-btn" class="locate-btn" title="Use my location">◎</button>
+        </header>
+
+        <section class="hero" id="weather-main">
+            <div class="city-wrap">
+                <h2 id="city" class="city">Loading...</h2>
+                <p id="date" class="date">&nbsp;</p>
+            </div>
+            <div class="current">
+                <img id="icon" class="icon" src="" alt="" />
+                <div class="temp" id="temp">--°</div>
+                <p class="desc" id="desc">&nbsp;</p>
+            </div>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="metric-label">Feels like</span>
+                    <span class="metric-value" id="feels-like">--°</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Humidity</span>
+                    <span class="metric-value" id="humidity">--%</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Wind</span>
+                    <span class="metric-value" id="wind">-- km/h</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-label">Pressure</span>
+                    <span class="metric-value" id="pressure">-- hPa</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="forecast" id="forecast">
+            <h3 class="section-title">5-Day Forecast</h3>
+            <div class="forecast-grid" id="forecast-grid"></div>
+        </section>
+
+        <p id="error" class="error hidden"></p>
+    </main>
+
+    <footer class="footer">Powered by OpenWeather · <span id="source-city">&nbsp;</span></footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
